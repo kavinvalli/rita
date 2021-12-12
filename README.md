@@ -47,5 +47,3 @@ RITA supports authentication with email-password.
 ## Linting and Formatting
 
 This project comes with ESLint and Prettier setup out of the box, configs are in `.eslintrc.js` and `.prettierrc` respectively.
-
-There's also husky and pretty-quick for pre-commit formatting.
