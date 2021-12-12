@@ -1,77 +1,46 @@
 @import './tailwind.css';
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap'); */
 
-/* html, body { */
-/*   background-color: #F7F8FA; */
-/*   font-family: 'Poppins', sans-serif; */
-/*   height: 100vh; */
-/*   color: #46444c; */
-/*   position: relative; */
-/* } */
+body,
+html {
+  min-height: 100vh;
+}
 
-/* body:before { */
-/*   content: ''; */
-/*   background: #5A45FF; */
-/*   top: 0; */
-/*   left: 0; */
-/*   right: 0; */
-/*   height: 6px; */
-/*   position: absolute; */
-/* } */
+body,
+html,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  @apply bg-gray-bg;
+}
 
-/* * { */
-/*   margin: 0; */
-/*   padding: 0; */
-/* } */
+.button {
+  @apply cursor-pointer bg-gray-bg block rounded-lg p-4 text-center
+         uppercase leading-none font-bold border-2 border-gray-bg
+         text-sm text-gray-700 transition
+         hover:border-accent focus:border-accent
+         focus:outline-none focus:shadow-none;
+}
 
-/* a { */
-/*   color: #5A45FF; */
-/*   text-decoration: none; */
-/* } */
+.input-group:focus-within label {
+  @apply text-gray-700;
+}
 
-/* main { */
-/*   max-width: 620px; */
-/*   margin: auto; */
-/*   height: 100vh; */
-/*   padding: 0 30px; */
-/*   align-items: center; */
-/*   display: flex; */
-/*   justify-content: center; */
-/* } */
+.input-group label {
+  @apply text-xs font-bold uppercase text-gray-500 mb-3 transition;
+}
 
-/* .title { */
-/*   font-size: 50px; */
-/*   line-height: 50px; */
-/*   margin-bottom: 10px; */
-/*   color: #17161A; */
-/* } */
+.input-group input {
+  @apply border-2 border-gray-bg focus:border-accent focus:outline-none rounded-lg p-3 w-full;
+}
 
-/* .subtitle { */
-/*   font-size: 26px; */
-/*   margin-bottom: 40px; */
-/* } */
+input:focus,
+select:focus {
+  box-shadow: none !important;
+}
 
-/* p { */
-/*   margin-bottom: 20px; */
-/* } */
-
-/* main ul { */
-/*   list-style: none; */
-/* } */
-
-/* main li { */
-/*   margin-bottom: 5px; */
-/*   position: relative; */
-/*   padding-left: 25px; */
-/* } */
-
-/* main li:before { */
-/*   content: '—'; */
-/*   position: absolute; */
-/*   left: 0; */
-/* } */
-
-/* main code { */
-/*   font-size: 16px; */
-/*   background: #e6e2ff; */
-/* } */
+.input-group .error {
+  @apply text-red-700 text-sm mt-2;
+}

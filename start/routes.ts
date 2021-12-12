@@ -20,11 +20,15 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
+Route.get('/', async ({ inertia, auth }) => {
+  await auth.use('web').check()
+  return inertia.render('index')
 })
-Route.get('/test', async ({ inertia }) => {
-  return inertia.render('Test', {
-    name: 'John',
-  })
-})
+
+Route.group(() => {
+  Route.get('/login', 'AuthController.showLogin')
+  Route.post('/login', 'AuthController.login')
+  Route.get('/register', 'AuthController.showRegister')
+  Route.post('/register', 'AuthController.register')
+  Route.get('/logout', 'AuthController.logout')
+}).prefix('/auth')

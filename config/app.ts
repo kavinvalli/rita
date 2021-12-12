@@ -13,6 +13,7 @@ import { LoggerConfig } from '@ioc:Adonis/Core/Logger'
 import { ProfilerConfig } from '@ioc:Adonis/Core/Profiler'
 import { ValidatorConfig } from '@ioc:Adonis/Core/Validator'
 import { AssetsManagerConfig } from '@ioc:Adonis/Core/AssetsManager'
+import { InertiaConfig } from '@ioc:EidelLev/Inertia'
 
 /*
 |--------------------------------------------------------------------------
@@ -273,4 +274,8 @@ export const assets: AssetsManagerConfig = {
   style: {
     attributes: {},
   },
+}
+
+export const inertia: InertiaConfig = {
+  view: 'app',
 }

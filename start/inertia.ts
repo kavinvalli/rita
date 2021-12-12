@@ -8,10 +8,13 @@
 |
 */
 
-import Inertia from '@ioc:EidelLev/Inertia';
+import Inertia from '@ioc:EidelLev/Inertia'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 Inertia.share({
   errors: (ctx) => {
-    return ctx.session.flashMessages.get('errors');
+    return ctx.session.flashMessages.get('errors')
   },
-}).version(() => Inertia.manifestFile('public/assets/manifest.json'));
+  authenticated: ({ auth }: HttpContextContract) => auth.isLoggedIn,
+  user: ({ auth }: HttpContextContract) => auth.user,
+}).version(() => Inertia.manifestFile('public/assets/manifest.json'))
