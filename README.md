@@ -26,6 +26,10 @@ const { props: { user } } = usePage<IPageProps>();
 
 This file also has `IUser`, the interface for the User model.
 
+### `useTitle`
+
+`resources/js/lib/use-title.tsx` contains the `useTitle` hook, used to set the title from inside a React component. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
+
 ## Authentication
 
 RITA supports authentication with email-password.

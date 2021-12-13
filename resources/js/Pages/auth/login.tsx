@@ -2,6 +2,7 @@ import { Link, useForm } from '@inertiajs/inertia-react'
 import React from 'react'
 import Layout from '../../components/Layout'
 import TextInput from '../../components/TextInput'
+import useTitle from '../../lib/use-title'
 
 interface iLoginProps {
   error?: string
@@ -16,6 +17,7 @@ const Login: React.FC<iLoginProps> = ({ error }: iLoginProps) => {
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => setData(e.target.name as never, e.target.value as never)
+  useTitle('Login')
 
   return (
     <Layout>

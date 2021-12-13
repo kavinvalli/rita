@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import TextInput from '../../components/TextInput'
 import { IPageProps } from '../../lib/types'
+import useTitle from '../../lib/use-title'
 
 const Register: React.FC = () => {
   const {
@@ -18,6 +19,7 @@ const Register: React.FC = () => {
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => setData(e.target.name as never, e.target.value as never)
+  useTitle('Register')
 
   return (
     <Layout>
