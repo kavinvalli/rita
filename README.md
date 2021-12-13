@@ -49,9 +49,17 @@ Password: adminadmin
 
 ### Frontend Authorization
 
-`resources/js/lib/authorization.tsx` contains the following components - `Authenticated` and `Guest`. These show/don't show the children passed to them based on the user and authentication state.
+`resources/js/lib/authorization.tsx` contains the following components - `Admin`, `User`, `Authenticated` and `Guest`. These show/don't show the children passed to them based on the user and authentication state.
 
 ```tsx
+<Admin>
+  Only an admin can see this
+</Admin>
+
+<User>
+  Only a user who is not an admin can see this
+</User>
+
 <Authenticated>
   Both users and admins can see this
 </Authenticated>
