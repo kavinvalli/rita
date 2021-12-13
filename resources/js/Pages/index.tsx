@@ -1,7 +1,7 @@
 import { Link, usePage } from '@inertiajs/inertia-react'
 import React from 'react'
 import Layout from '../components/Layout'
-import { Authenticated, Guest } from '../lib/authorization'
+import { Admin, Authenticated, Guest } from '../lib/authorization'
 import { IPageProps } from '../lib/types'
 import useTitle from '../lib/use-title'
 
@@ -35,6 +35,11 @@ const Index: React.FC = () => {
               {JSON.stringify(user, null, 2)}
             </pre>
             <div className="mt-4">
+              <Admin>
+                <Link className="button w-full mb-4" href="/admin">
+                  Admin
+                </Link>
+              </Admin>
               <Link className="button w-full" href="/auth/logout">
                 Logout
               </Link>

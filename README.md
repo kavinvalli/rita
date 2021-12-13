@@ -34,6 +34,19 @@ This file also has `IUser`, the interface for the User model.
 
 RITA supports authentication with email-password.
 
+## Authorization
+
+Admin accounts have the `admin` property on the `User` model set to true. By default, all users who register via the `/auth/register` route are not admins.
+
+### Seeded admin account
+
+The database seeder creates an admin account with the following credentials:
+
+```
+Email: admin@example.com
+Password: adminadmin
+```
+
 ### Frontend Authorization
 
 `resources/js/lib/authorization.tsx` contains the following components - `Authenticated` and `Guest`. These show/don't show the children passed to them based on the user and authentication state.
