@@ -1,5 +1,5 @@
 # RITA
-*React Inertia Typescript Adonis*
+*React Inertia Typescript Adonis* with TailwindCSS
 
 A batteries-included starter for Adonis apps.
 
