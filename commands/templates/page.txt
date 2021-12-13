@@ -1,0 +1,19 @@
+import React from 'react'
+import Layout from '${"../".repeat(numberOfSlashes)}components/Layout'
+import useTitle from '${"../".repeat(numberOfSlashes)}lib/use-title'
+
+interface I${filename}Props {}
+
+const ${filename}: React.FC<I${filename}Props> = ({}: I${filename}Props) => {
+  useTitle('${filename}')
+
+  return (
+    <Layout>
+      <div className="flex items-center justify-center h-full w-full px-5">
+        <div className="bg-white w-full max-w-sm p-5 rounded-lg">${filename}</div>
+      </div>
+    </Layout>
+  )
+}
+
+export default ${filename}
