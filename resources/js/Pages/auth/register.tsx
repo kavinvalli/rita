@@ -1,16 +1,17 @@
-import { Link, useForm } from '@inertiajs/inertia-react'
+import { Link, useForm, usePage } from '@inertiajs/inertia-react'
 import React from 'react'
 import Layout from '../../components/Layout'
 import TextInput from '../../components/TextInput'
+import { IPageProps } from '../../lib/types'
 
-interface iRegisterProps {
-  error?: string
-}
-
-const Register: React.FC<iRegisterProps> = ({ error }: iRegisterProps) => {
-  const { setData, post, processing, errors } = useForm({
+const Register: React.FC = () => {
+  const {
+    props: { errors },
+  } = usePage<IPageProps>()
+  const { setData, post, processing } = useForm({
     email: '',
     password: '',
+    password_confirmation: '',
   })
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (
@@ -36,10 +37,10 @@ const Register: React.FC<iRegisterProps> = ({ error }: iRegisterProps) => {
               name="email"
               label="Email"
               placeholder="john@example.com"
-              type="email"
+              type="text"
               className="my-4"
               disabled={processing}
-              error={errors.email}
+              error={errors?.email}
               onChange={handleChange}
             />
             <TextInput
@@ -49,15 +50,27 @@ const Register: React.FC<iRegisterProps> = ({ error }: iRegisterProps) => {
               type="password"
               className="my-4"
               disabled={processing}
-              error={errors.password}
+              error={errors?.password}
+              onChange={handleChange}
+            />
+            <TextInput
+              name="password_confirmation"
+              label="Confirm Password"
+              placeholder="sup3rs3cr3tp4ssw0rd"
+              type="password"
+              className="my-4"
+              disabled={processing}
+              error={errors?.password_confirmation}
               onChange={handleChange}
             />
 
-            {error && (
-              <div className="input-group my-4">
-                <div className="error">{error}</div>
-              </div>
-            )}
+            {
+              // error && (
+              // <div className="input-group my-4">
+              //   <div className="error">{error}</div>
+              // </div>
+              // )
+            }
 
             <div className="input-group my-4">
               <div className="text-center text-sm text-gray-800">

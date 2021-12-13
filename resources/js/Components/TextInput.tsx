@@ -8,9 +8,7 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const TextInput: React.FC<IProps> = ({ label, error, name, className, ...props }: IProps) => {
   return (
     <div className={`input-group ${className}`}>
-      <label htmlFor={name} className="hidden">
-        {label}
-      </label>
+      <label htmlFor={name}>{label}</label>
       <input
         type={props.type}
         placeholder={props.placeholder}
