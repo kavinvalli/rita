@@ -1,5 +1,25 @@
 {
   "commands": {
+    "make:page": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/MakePage",
+      "commandName": "make:page",
+      "description": "Create a new page using a template",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "filePath",
+          "name": "File",
+          "required": true,
+          "description": "Full file path including file name excluding `.tsx`. Example: `auth/login`"
+        }
+      ],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",

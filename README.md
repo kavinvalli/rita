@@ -30,6 +30,11 @@ This file also has `IUser`, the interface for the User model.
 
 `resources/js/lib/use-title.tsx` contains the `useTitle` hook, used to set the title from inside a React component. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
 
+### Ace command to create pages
+
+`node ace make:page <PAGE NAME>` creates a page in `resources/js/pages` using the template in `commands/templates/page.txt`.
+For example: `node ace make:page auth/login` or `node ace make:page test`
+
 ## Authentication
 
 RITA supports authentication with email-password.
