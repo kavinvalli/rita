@@ -8,6 +8,7 @@ export default class Users extends BaseSchema {
       table.increments('id')
       table.string('email')
       table.string('password')
+      table.boolean('admin').defaultTo(false)
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
