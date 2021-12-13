@@ -36,6 +36,13 @@ Route.group(() => {
   Route.get('/logout', 'AuthController.logout')
 }).prefix('/auth')
 
+Route.group(() => {
+  Route.get('/github/redirect', 'SocialAuthController.githubRedirect')
+  Route.get('/github/callback', 'SocialAuthController.githubCallback')
+  Route.get('/google/redirect', 'SocialAuthController.googleRedirect')
+  Route.get('/google/callback', 'SocialAuthController.googleCallback')
+})
+
 Route.get('/admin', async ({ inertia }) => {
   return inertia.render('index')
 }).middleware('admin')

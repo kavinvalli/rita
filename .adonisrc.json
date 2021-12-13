@@ -31,7 +31,8 @@
     "@adonisjs/shield",
     "@eidellev/inertia-adonisjs",
     "@adonisjs/lucid",
-    "@adonisjs/auth"
+    "@adonisjs/auth",
+    "@adonisjs/ally"
   ],
   "metaFiles": [
     {

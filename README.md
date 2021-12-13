@@ -37,7 +37,7 @@ For example: `node ace make:page auth/login` or `node ace make:page test`
 
 ## Authentication
 
-RITA supports authentication with email-password.
+RITA supports authentication with email-password, Github and Google out of the box. Social authentication is implemented with [Ally](https://docs.adonisjs.com/guides/auth/social#document), so it should be easy to add other providers. See `app/Http/Controllers/SocialAuthController.ts` for implementation.
 
 ## Ace command to create user
 `node ace create:user` prompts you fields to create a new user directly from the cli.

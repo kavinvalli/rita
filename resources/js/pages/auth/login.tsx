@@ -1,6 +1,7 @@
 import { Link, useForm } from '@inertiajs/inertia-react'
 import React from 'react'
 import Layout from '../../components/Layout'
+import { SignInWithGithub, SignInWithGoogle } from '../../components/SocialButton'
 import TextInput from '../../components/TextInput'
 import useTitle from '../../lib/use-title'
 
@@ -74,6 +75,16 @@ const Login: React.FC<iLoginProps> = ({ error }: iLoginProps) => {
               <button type="submit" className="button w-full" disabled={processing}>
                 Login
               </button>
+            </div>
+
+            <div className="input-group my-4 text-md text-center font-bold text-gray-500">OR</div>
+
+            <div className="input-group my-4">
+              <SignInWithGithub />
+            </div>
+
+            <div className="input-group my-4">
+              <SignInWithGoogle />
             </div>
           </form>
         </div>
