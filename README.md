@@ -42,6 +42,9 @@ RITA supports authentication with email-password.
 ## Ace command to create user
 `node ace create:user` prompts you fields to create a new user directly from the cli.
 
+## Inertia Shared Data
+You can share data across all inertia pages by editting `start/inertia.ts` and updating `IPageProps` in `resources/js/lib/types.tsx`
+
 ## Authorization
 
 Admin accounts have the `admin` property on the `User` model set to true. By default, all users who register via the `/auth/register` route are not admins.
