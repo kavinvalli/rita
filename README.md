@@ -49,6 +49,9 @@ You can share data across all inertia pages by editting `start/inertia.ts` and u
 
 Admin accounts have the `admin` property on the `User` model set to true. By default, all users who register via the `/auth/register` route are not admins.
 
+### Middleware
+You can use the `auth` and the `admin` middleware which are set in `app/Middleware`
+
 ### Seeded admin account
 
 The database seeder creates an admin account with the following credentials:
