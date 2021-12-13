@@ -25,6 +25,11 @@ export default class AuthController {
     try {
       const payload = await request.validate({
         schema: newUserSchema,
+        messages: {
+          'required': 'The field: {{ field }} is required',
+          'email.unique': 'User with email exists',
+          'password_confirmation.confirmed': 'Passwords do not match',
+        },
       })
       const user = await User.create(payload)
       await auth.login(user)
