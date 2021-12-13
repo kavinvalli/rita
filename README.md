@@ -39,6 +39,9 @@ For example: `node ace make:page auth/login` or `node ace make:page test`
 
 RITA supports authentication with email-password.
 
+## Ace command to create user
+`node ace create:user` prompts you fields to create a new user directly from the cli.
+
 ## Authorization
 
 Admin accounts have the `admin` property on the `User` model set to true. By default, all users who register via the `/auth/register` route are not admins.

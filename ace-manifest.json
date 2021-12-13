@@ -1,5 +1,17 @@
 {
   "commands": {
+    "create:user": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/CreateUser",
+      "commandName": "create:user",
+      "description": "Create a new user",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "make:page": {
       "settings": {
         "loadApp": false,
