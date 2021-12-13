@@ -9,6 +9,7 @@ const Register: React.FC = () => {
     props: { errors },
   } = usePage<IPageProps>()
   const { setData, post, processing } = useForm({
+    name: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -33,6 +34,16 @@ const Register: React.FC = () => {
               })
             }}
           >
+            <TextInput
+              name="name"
+              label="Name"
+              placeholder="John Doe"
+              type="text"
+              className="my-4"
+              disabled={processing}
+              error={errors?.name}
+              onChange={handleChange}
+            />
             <TextInput
               name="email"
               label="Email"
