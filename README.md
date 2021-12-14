@@ -7,6 +7,8 @@ A batteries-included starter for Adonis apps.
 > You will have to have mysql running on your machine
 ```sh
 git clone https://github.com/kavinvalli/rita new-project
+cd new-project
+rm -rf CNAME
 npm i
 cp .env.example .env
 node ace migration:run
