@@ -25,7 +25,7 @@ const Login: React.FC<iLoginProps> = ({ error }: iLoginProps) => {
       <div className="flex items-center justify-center h-full w-full px-5">
         <div className="bg-white w-full max-w-sm p-5 rounded-lg">
           <div className="w-full flex items-center justify-start">
-            <h1 className="text-xl font-bold">Register</h1>
+            <h1 className="text-xl font-bold">Login</h1>
           </div>
           <form
             onSubmit={(e: React.SyntheticEvent) => {
