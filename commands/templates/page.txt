@@ -8,7 +8,7 @@ const ${filename}: React.FC<I${filename}Props> = ({}: I${filename}Props) => {
   useTitle('${filename}')
 
   return (
-    <Layout>
+    <Layout links={[]}>
       <div className="flex items-center justify-center h-full w-full px-5">
         <div className="bg-white w-full max-w-sm p-5 rounded-lg">${filename}</div>
       </div>

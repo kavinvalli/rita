@@ -11,7 +11,7 @@ const Index: React.FC = () => {
   } = usePage<IPageProps>()
   authenticated ? useTitle(user.name) : useTitle('Home')
   return (
-    <Layout>
+    <Layout links={[]}>
       <div className="flex items-center justify-center h-full w-full px-5">
         <Guest>
           <div className="bg-white w-full max-w-sm p-5 rounded-lg">

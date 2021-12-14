@@ -1,8 +1,12 @@
 import { InertiaLink } from '@inertiajs/inertia-react'
 import React from 'react'
 
-export default function Layout({ children }) {
-  const links = []
+interface ILayoutProps {
+  children: React.ReactNode
+  links: { href: string; label: string }[]
+}
+
+const Layout: React.FC<ILayoutProps> = ({ children, links }) => {
   return (
     <div className="flex flex-col w-full h-full bg-gray-bg">
       <nav className="flex p-5 sm:px-12 justify-between items-center flex-col sm:flex-row">
@@ -65,3 +69,5 @@ export default function Layout({ children }) {
     </div>
   )
 }
+
+export default Layout
