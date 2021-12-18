@@ -32,6 +32,9 @@ This file also has `IUser`, the interface for the User model.
 
 `resources/js/lib/use-title.tsx` contains the `useTitle` hook, used to set the title from inside a React component. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
 
+## Example
+A Todo app made with RITA can be found at https://github.com/kavinvalli/rita-todo
+
 ### Ace command to create pages
 
 `node ace make:page <PAGE NAME>` creates a page in `resources/js/pages` using the template in `commands/templates/page.txt`.
