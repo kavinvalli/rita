@@ -83,6 +83,39 @@ Password: adminadmin
 </Guest>
 ```
 
+## Socket.io implemented
+### Backend
+#### Broadcast on start
+You can setup listeners or emit data on start by editting `start/socket.ts`.
+
+#### Broaadcast from anywhere
+https://docs.adonisjs.com/cookbooks/socketio-with-adonisjs#broadcast-from-anywhere
+
+### Frontend
+1. Use the `useContext` api and `SockerContext` in `resources/js/context/socket.tsx`
+```tsx
+import React, { useContext, useEffect } from 'react'
+import { SocketContext } from '../context/socket'
+
+const socket = useContext(SocketContext)
+```
+2. On `useEffect`, you can setup listeners or emit some data
+```tsx
+useEffect(() => {
+  socket.on('test', (data: { [key: string]: string }) => console.log(data))
+  socket.on('sendMessageToClient', (data: string) => console.log(data))
+
+  return () => socket.disconnect()
+}, [])
+```
+
+3. You can also emit data from the frontend on certain events. For example:
+```tsx
+<button className="button" onClick={() => socket.emit('sendMessage', 'hello world!')}>
+  Hello
+</button>
+```
+
 ## Linting and Formatting
 
 This project comes with ESLint and Prettier setup out of the box, configs are in `.eslintrc.js` and `.prettierrc` respectively.
