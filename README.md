@@ -7,6 +7,8 @@ A batteries-included starter for Adonis apps.
 > You will have to have mysql running on your machine
 ```sh
 git clone https://github.com/kavinvalli/rita new-project
+cd new-project
+rm -rf CNAME
 npm i
 cp .env.example .env
 node ace migration:run
@@ -29,6 +31,7 @@ This file also has `IUser`, the interface for the User model.
 ### `useTitle`
 
 `resources/js/lib/use-title.tsx` contains the `useTitle` hook, used to set the title from inside a React component. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
+
 
 ### Ace command to create pages
 
@@ -119,3 +122,6 @@ useEffect(() => {
 ## Linting and Formatting
 
 This project comes with ESLint and Prettier setup out of the box, configs are in `.eslintrc.js` and `.prettierrc` respectively.
+
+## Example
+A Todo app made with RITA can be found at https://github.com/kavinvalli/rita-todo
