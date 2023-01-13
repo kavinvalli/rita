@@ -4,7 +4,8 @@
     "./commands",
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
-    "@adonisjs/lucid/build/commands"
+    "@adonisjs/lucid/build/commands",
+    "adonis-sail/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {

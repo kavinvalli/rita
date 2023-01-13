@@ -33,4 +33,7 @@ export default Env.rules({
   GITHUB_CLIENT_SECRET: Env.schema.string.optional(),
   GOOGLE_CLIENT_ID: Env.schema.string.optional(),
   GOOGLE_CLIENT_SECRET: Env.schema.string.optional(),
+  REDIS_PORT: Env.schema.string.optional(),
+  MAILHOG_PORT: Env.schema.string.optional(),
+  MAILHOG_DASHBOARD_PORT: Env.schema.string.optional(),
 })

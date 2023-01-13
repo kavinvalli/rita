@@ -295,6 +295,18 @@
           "alias": "c"
         }
       ]
+    },
+    "sail:install": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "adonis-sail/build/commands/InstallSail",
+      "commandName": "sail:install",
+      "description": "Install Adonis Sail and generate Docker Compose file",
+      "args": [],
+      "aliases": [],
+      "flags": []
     }
   },
   "aliases": {}

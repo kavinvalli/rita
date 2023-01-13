@@ -1,0 +1,56 @@
+# For more information: https://github.com/julien-r44/adonis-sail
+version: '3'
+
+services:
+  redis:
+    image: redis:alpine
+    hostname: redis
+    container_name: redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      retries: 3
+      timeout: 5s
+    volumes:
+      - 'sailredis:/data'
+    networks:
+      - sail
+
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    container_name: mysql
+    ports:
+      - '${MYSQL_PORT:-3306}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${MYSQL_PASSWORD}'
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: '${MYSQL_DB_NAME:?err}'
+      MYSQL_USER: '${MYSQL_USER:?err}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD?:err}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - 'sailmysql:/var/lib/mysql'
+    networks:
+      - sail
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-p${MYSQL_PASSWORD}"]
+      retries: 3
+      timeout: 5s
+
+  mailhog:
+    image: 'mailhog/mailhog:latest'
+    container_name: 'mailhog'
+    ports:
+      - '${MAILHOG_PORT:-1025}:1025'
+      - '${MAILHOG_DASHBOARD_PORT:-8025}:8025'
+    networks:
+      - sail
+
+networks:
+  sail:
+    driver: bridge
+
+volumes:
+  sailredis:
+  sailmysql:

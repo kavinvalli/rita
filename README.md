@@ -13,6 +13,7 @@ cd new-project
 rm -rf CNAME
 npm i
 cp .env.example .env
+docker-compose up -d
 node ace migration:run
 node ace db:seed
 npm run dev
