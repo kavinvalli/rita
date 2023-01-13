@@ -13,11 +13,23 @@ cd new-project
 rm -rf CNAME
 npm i
 cp .env.example .env
-docker-compose up -d
+docker-compose up -d # In case you want to use adonis-sail (similar to laravel's sail)
 node ace migration:run
 node ace db:seed
 npm run dev
 ```
+
+## Sail
+The starter also has support for [adonis-sail](https://github.com/Julien-R44/adonis-sail), therefore introducing a Docker development environment.
+> Note that this is completely optional to use, but it does make your development flow much easier.
+
+You need to have [docker](https://www.docker.com/) installed for this to work.
+
+```sh
+docker-compose up -d
+```
+
+By default, this will spin up MySQL, Redis and Mailhog. You can add or remove as you wish in `docker-compose.yml`
 
 ## Frontend
 
